@@ -12,8 +12,7 @@ export default function contactPageLoad() {
   locationOnePara.innerText = `Location One
   123 Location Drive, State, CA, 00000
   555-555-5555
-  contactEmail@email.com
-  `;
+  contactEmail@email.com`;
   contentContainer.append(locationOneHeading, locationOnePara);
 
   const locationTwoHeading = document.createElement("h2");
@@ -22,8 +21,7 @@ export default function contactPageLoad() {
   locationTwoPara.innerText = `Location Two
   123 Location Drive, State, CA, 00000
   555-555-5555
-  contactEmail@email.com
-  `;
+  contactEmail@email.com`;
   contentContainer.append(locationTwoHeading, locationTwoPara);
 
   const locationThreeHeading = document.createElement("h2");
@@ -32,7 +30,6 @@ export default function contactPageLoad() {
   locationThreePara.innerText = `Location Three
   123 Location Drive, State, CA, 00000
   555-555-5555
-  contactEmail@email.com
-  `;
+  contactEmail@email.com`;
   contentContainer.append(locationThreeHeading, locationThreePara);
 }

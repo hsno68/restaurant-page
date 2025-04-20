@@ -3,7 +3,7 @@ import homePageLoad from "./homepage.js";
 import menuPageLoad from "./menu.js";
 import contactPageLoad from "./contact.js";
 
-homePageLoad();
+window.addEventListener("load", homePageLoad);
 
 const homeButton = document.querySelector("button.home");
 const menuButton = document.querySelector("button.menu");
