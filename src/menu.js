@@ -2,6 +2,10 @@ export default function menuPageLoad() {
   const contentContainer = document.querySelector("div#content-container");
   contentContainer.replaceChildren();
   
+  const menuHeading = document.createElement("h1");
+  menuHeading.textContent = "Menu";
+  contentContainer.appendChild(menuHeading);
+
   const numberOfDishes = 12;
 
   for (let i = 0; i <= numberOfDishes; i++) {
