@@ -22,6 +22,10 @@ body {
   padding: 2rem;
 }
 
+.body-container {
+  width: clamp(250px, 50%, 800px);
+}
+
 nav {
   display: flex;
   gap: 1rem;
