@@ -1,5 +1,6 @@
-export default function pageLoad() {
+export default function homePageLoad() {
   const contentContainer = document.querySelector("div#content-container");
+  contentContainer.replaceChildren();
 
   const restaurantNameHeading = document.createElement("h1");
   restaurantNameHeading.textContent = "Restaurant Name";

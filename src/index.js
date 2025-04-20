@@ -1,4 +1,11 @@
 import "./styles.css";
-import pageLoad from "./homepage.js";
+import homePageLoad from "./homepage.js";
+import menuPageLoad from "./menu.js";
 
-pageLoad();
+homePageLoad();
+
+const homeButton = document.querySelector("button.home");
+const menuButton = document.querySelector("button.menu");
+
+homeButton.addEventListener("click", homePageLoad);
+menuButton.addEventListener("click", menuPageLoad);
