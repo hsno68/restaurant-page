@@ -46,14 +46,3 @@ nav button:hover {
   cursor: pointer;
   background-color: var(--main-text-contrast);
 }
-
-#content-container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-#content-container > .subContainer {
-  border: 1px solid red;
-}

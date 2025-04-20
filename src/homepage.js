@@ -1,24 +1,44 @@
 export default function pageLoad() {
   const contentContainer = document.querySelector("div#content-container");
 
-  const pageContent = [
-    {
-      h1: "Tahm Kench's Bar and Grill",
-    },
-    {
-      h2: "About",
-      p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed leo ipsum, dictum ac orci eu, tempor posuere odio. Etiam luctus, urna vitae iaculis iaculis, magna neque aliquet lorem, quis mattis nibh libero et ex. Cras varius vel tortor sit amet ullamcorper. Ut non tortor lacus. Fusce id dui sed urna facilisis sollicitudin. Quisque iaculis, odio ac egestas varius, sem orci maximus felis, a convallis orci lectus quis libero. Sed non porttitor lorem, vitae luctus mauris."
-    },
-  ];
+  const restaurantNameHeading = document.createElement("h1");
+  restaurantNameHeading.textContent = "Restaurant Name";
+  contentContainer.appendChild(restaurantNameHeading);
 
-  pageContent.forEach((content) => {
-    const subContainer = document.createElement("div");
-    for (const HTMLtag in content) {
-      const htmlElement = document.createElement(HTMLtag);
-      htmlElement.textContent = content[HTMLtag];
-      subContainer.appendChild(htmlElement);
-    }
-    subContainer.classList.add("subContainer");
-    contentContainer.appendChild(subContainer);
-  });
+  const aboutHeading = document.createElement("h2");
+  aboutHeading.textContent = "About";
+  contentContainer.appendChild(aboutHeading);
+  
+  const aboutPara = document.createElement("p");
+  aboutPara.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida, mi in varius gravida, ante ex tempor ex, sit amet tincidunt turpis orci ut metus. Ut tortor ligula, cursus non aliquam in, elementum nec ante. Donec maximus luctus odio at sagittis. Fusce iaculis cursus turpis, sed viverra lectus lobortis a.";
+  contentContainer.appendChild(aboutPara);
+
+  const hoursHeading = document.createElement("h2");
+  hoursHeading.textContent = "Hours";
+  contentContainer.appendChild(hoursHeading);
+
+  const hoursList = document.createElement("ul");
+  const daysOpen = {
+    Monday: "9am - 10pm",
+    Tuesday: "9am - 10pm",
+    Wednesday: "9am - 10pm",
+    Thursday: "9am - 10pm",
+    Friday: "9am - 11pm",
+    Saturday: "9am - 11pm",
+    Sunday: "9am - 11pm",
+  };
+  for (const day in daysOpen) {
+    const dayListItem = document.createElement("li");
+    dayListItem.textContent = `${day} : ${daysOpen[day]}`;
+    hoursList.appendChild(dayListItem);
+  }
+  contentContainer.appendChild(hoursList);
+
+  const locationHeading = document.createElement("h2");
+  locationHeading.textContent = "Location";
+  contentContainer.appendChild(locationHeading);
+
+  const locationPara = document.createElement("p");
+  locationPara.textContent = "123 Location Drive, Location, CA, 00000";
+  contentContainer.appendChild(locationPara);
 }
