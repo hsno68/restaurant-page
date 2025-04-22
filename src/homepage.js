@@ -3,7 +3,7 @@ import ElementBuilder, { contentContainer } from "./builderClass.js";
 export default function homePageLoad() {
   contentContainer.replaceChildren();
 
-  const nameSection = new ElementBuilder("div")
+  const headingSection = new ElementBuilder("div")
     .child(new ElementBuilder("h1").text("Restaurant Name").build())
     .build();
 
@@ -29,5 +29,5 @@ export default function homePageLoad() {
     .child(new ElementBuilder("p").text("123 Location Drive, Location, CA, 00000").build())
     .build();
 
-  contentContainer.append(nameSection, aboutSection, timeSection, locationSection);
+  contentContainer.append(headingSection, aboutSection, timeSection, locationSection);
 }
