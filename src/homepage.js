@@ -1,35 +1,9 @@
+import ElementBuilder, { contentContainer } from "./builderClass.js";
+
 export default function homePageLoad() {
-  const contentContainer = document.querySelector("div#content-container");
   contentContainer.replaceChildren();
 
-  const pageContent = [];
-
-  class ElementBuilder {
-    constructor(type) {
-      this.element = document.createElement(type);
-    }
-
-    text(content) {
-      this.element.textContent = content;
-      return this;
-    }
-
-    html(content) {
-      this.element.innerHTML = content;
-      return this;
-    }
-
-    child(child) {
-      this.element.appendChild(child);
-      return this;
-    }
-
-    build() {
-      return this.element;
-    }
-  }
-
-  const restaurantName = new ElementBuilder("div")
+  const nameSection = new ElementBuilder("div")
     .child(new ElementBuilder("h1").text("Restaurant Name").build())
     .build();
 
@@ -55,5 +29,5 @@ export default function homePageLoad() {
     .child(new ElementBuilder("p").text("123 Location Drive, Location, CA, 00000").build())
     .build();
 
-  contentContainer.append(restaurantName, aboutSection, timeSection, locationSection);
+  contentContainer.append(nameSection, aboutSection, timeSection, locationSection);
 }
