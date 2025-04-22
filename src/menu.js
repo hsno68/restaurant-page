@@ -1,22 +1,28 @@
+import ElementBuilder, { contentContainer } from "./builderClass.js";
+
 export default function menuPageLoad() {
-  const contentContainer = document.querySelector("div#content-container");
   contentContainer.replaceChildren();
-  
-  const menuHeading = document.createElement("h1");
-  menuHeading.textContent = "Menu";
-  contentContainer.appendChild(menuHeading);
 
-  const numberOfDishes = 12;
+  const headingSection = new ElementBuilder("div")
+    .child(new ElementBuilder("h1").text("Menu").build())
+    .build();
 
-  for (let i = 0; i <= numberOfDishes; i++) {
-    const div = document.createElement("div");
-    const cardHeading = document.createElement("h3");
-    cardHeading.textContent = "Dish Name";
-    const dishPriceHeading = document.createElement("h3");
-    dishPriceHeading.textContent = "$15.00";
-    const dishDescriptionPara = document.createElement("p");
-    dishDescriptionPara.textContent = "This is where you insert dish ingredients.";
-    div.append(cardHeading, dishPriceHeading, dishDescriptionPara);
-    contentContainer.appendChild(div);
+  const menuSection = new ElementBuilder("div")
+    .build();
+
+  itemCardsBuilder().forEach(card => menuSection.appendChild(card));
+
+  function itemCardsBuilder() {
+    const cards = [];
+    for (let i = 0; i <= 12; i++) {
+      cards.push(new ElementBuilder("div")
+      .child(new ElementBuilder("h3").text("Dish Name").build())
+      .child(new ElementBuilder("h4").text("Dish Price").build())
+      .child(new ElementBuilder("p").text("This is where you insert dish ingredients.").build())
+      .build());
+    }
+    return cards;
   }
+
+  contentContainer.append(headingSection, menuSection);
 }
